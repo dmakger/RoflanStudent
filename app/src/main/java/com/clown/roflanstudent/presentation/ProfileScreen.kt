@@ -25,7 +25,6 @@ class ProfileScreen : AppCompatActivity() {
         login = this.intent.getStringExtra("studentLogin")
         if (login != null) {
             val url = GetURLs().urls[login]
-            Log.d("ProfileScreen", url.toString())
             val data = InfoJSONReader(url!!.info, login!!).getData()?.get(0)
 
             if (data != null) {
